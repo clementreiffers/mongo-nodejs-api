@@ -1,30 +1,25 @@
-import * as mongoose from "mongoose";
 import express from "express";
+import {createClient} from "redis";
+import {API_PORT, IP, REDIS_PORT} from "./contants.js";
 
-const API_PORT = 5000;
-const MONGODB_IP = "localhost";
-const MONGODB_PORT = 27017;
-const MONGODB_NAME = "test";
+const find = (req, res) => client.exists("url", req.query.url)
+	.then(data => res.send(JSON.stringify(data)))
+	.catch(err => res.send(err));
 
-mongoose.connect(`mongodb://${MONGODB_IP}:${MONGODB_PORT}/${MONGODB_NAME}`)
-	.then(() => console.log("connected to mongodb!"))
-	.catch(() => "pb with connection");
+const set = (req, res) => client.set("url", req.query.url)
+	.then(() => res.send("ok"))
+	.catch(err => res.send(err));
 
-const Website = mongoose.model("Website", {url: String});
-
-const rootApi = (req, res) => res.send("root api");
-const findUrl = async (req, res) => res.send(await Website.find(req.query).exec());
-const addUrl = (req, res) => {
-	if (req.query.url === undefined) {
-		return res.send("you must specify the url!");
-	}
-
-	new Website({...req.query}).save();
-	res.send(`${req.query.url} saved!`);
-};
+const client = createClient(REDIS_PORT, IP);
+client.connect()
+	.then(() => console.log("conneted to redis!"))
+	.catch(err => console.log(err));
 
 const app = express();
-app.get("/", rootApi);
-app.get("/find", findUrl);
-app.get("/add", addUrl);
+const router = new express.Router();
+router.get("/", (req, res) => res.send("root api"));
+router.get("/find", find);
+router.get("/add", set);
+
+app.use(router);
 app.listen(API_PORT, () => console.log(`listening on port ${API_PORT}`));
