@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
+import {MONGODB_URL} from "../../contants.js";
 
-mongoose.connect("mongodb://localhost:27017/test")
+mongoose.connect(MONGODB_URL)
 	.then(() => console.log("connected to the database!"))
 	.catch(err => console.log(err));
 

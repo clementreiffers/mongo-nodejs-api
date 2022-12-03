@@ -5,10 +5,15 @@ import postUrl from "./app/http-post/post.js";
 
 const app = express();
 const router = new express.Router();
+
+// HTTP GET
 router.get("/", (req, res) => res.send("coucou"));
 router.get("/get-all", findUrl);
 router.get("/get", findUrl);
 router.get("/is-url-exists", isUrlExists);
-router.get("/add", postUrl);
+
+// HTTP POST
+router.post("/add", postUrl);
+
 app.use(router);
 app.listen(API_PORT, () => console.log(`listening the port: ${API_PORT}`));
