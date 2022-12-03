@@ -1,12 +1,12 @@
 {
-  "name": "test-redis",
+  "name": "is-url-exists-api",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "type": "module",
   "dependencies": {
     "express": "^4.18.2",
-    "redis": "^4.5.1"
+    "mongoose": "^6.7.5"
   },
   "devDependencies": {
     "eslint": ">=8.27.0",
