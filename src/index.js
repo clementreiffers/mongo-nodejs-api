@@ -16,9 +16,6 @@ router.get("/is-url-exists", isUrlExists);
 
 // HTTP POST
 router.post("/add", postUrl);
-router.post("/test", (req, res) => {
-	console.log(req.body); // <==== req.body will be a parsed JSON object
-	res.send("ok");
-});
+
 app.use("/", router);
 app.listen(API_PORT, () => console.log(`listening the port: ${API_PORT}`));
