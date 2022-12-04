@@ -1,0 +1,41 @@
+Arguments: 
+  /home/clementreiffers/.nvm/versions/node/v18.12.1/bin/node /home/clementreiffers/.nvm/versions/node/v18.12.1/bin/yarn add body-parsr
+
+PATH: 
+  /home/clementreiffers/.nvm/versions/node/v18.12.1/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.2/bin:/mnt/c/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.2/libnvvp:/mnt/c/Program Files/Zulu/zulu-11/bin/:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files/Microsoft VS Code/bin:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/ProgramData/DockerDesktop/version-bin:/mnt/c/Program Files/Amazon/AWSCLIV2/:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/NVIDIA Corporation/Nsight Compute 2020.3.0/:/mnt/c/Program Files (x86)/Yarn/bin/:/mnt/c/Program Files/nodejs/:/mnt/c/Users/creif/.cargo/bin:/mnt/c/Users/creif/AppData/Local/Programs/Python/Python310/Scripts/:/mnt/c/Users/creif/AppData/Local/Programs/Python/Python310/:/mnt/c/Users/creif/AppData/Local/Programs/Python/Launcher/:/mnt/c/Users/creif/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/creif/Documents/cmder:/mnt/c/Program Files/JetBrains/WebStorm 2022.2/bin:/mnt/c/Program Files/JetBrains/PyCharm 2022.2.1/bin:/mnt/c/src/flutter/flutter/bin:/mnt/c/ProgramData/NVIDIA GPU Computing Toolkit/v11.2/bin:/mnt/c/Users/creif/AppData/Local/Yarn/bin:/mnt/c/Program Files/JetBrains/CLion 2022.2.4/bin:/mnt/c/Users/creif/AppData/Roaming/npm
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  18.12.1
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/body-parsr: Not found
+      at params.callback [as _callback] (/home/clementreiffers/.nvm/versions/node/v18.12.1/lib/node_modules/yarn/lib/cli.js:66145:18)
+      at self.callback (/home/clementreiffers/.nvm/versions/node/v18.12.1/lib/node_modules/yarn/lib/cli.js:140890:22)
+      at Request.emit (node:events:513:28)
+      at Request.<anonymous> (/home/clementreiffers/.nvm/versions/node/v18.12.1/lib/node_modules/yarn/lib/cli.js:141862:10)
+      at Request.emit (node:events:513:28)
+      at IncomingMessage.<anonymous> (/home/clementreiffers/.nvm/versions/node/v18.12.1/lib/node_modules/yarn/lib/cli.js:141784:12)
+      at Object.onceWrapper (node:events:627:28)
+      at IncomingMessage.emit (node:events:525:35)
+      at endReadableNT (node:internal/streams/readable:1359:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+
+npm manifest: 
+  {
+    "name": "examples",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

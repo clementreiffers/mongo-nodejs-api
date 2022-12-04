@@ -1,15 +1,15 @@
 import BadWebsites from "../mongodb/mongodb.js";
 
-const find = ({query}) => BadWebsites.find(query).exec();
+const _find = ({query}) => BadWebsites.find(query).exec();
 
-const findUrl = (req, res) => find(req)
-	.then(data => res.send(data))
+const _computeIsUrlExists = listUrl => listUrl.length !== 0;
+
+const findUrl = (req, res) => _find(req)
+	.then(data => res.send(Object(data).length ? data : {err: "no data"}))
 	.catch(err => res.send(err));
 
-const computeIsUrlExists = listUrl => listUrl.length !== 0;
-
-const isUrlExists = (req, res) => find(req)
-	.then(computeIsUrlExists)
+const isUrlExists = (req, res) => _find(req)
+	.then(_computeIsUrlExists)
 	.then(data => res.send(data))
 	.catch(err => res.send(err));
 

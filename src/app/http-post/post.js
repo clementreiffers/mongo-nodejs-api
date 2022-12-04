@@ -1,10 +1,9 @@
 import BadWebsites from "../mongodb/mongodb.js";
 
-const createUrl = ({query}) => new BadWebsites(query).save();
+const _createUrl = ({body}) => new BadWebsites(body).save();
 
 const postUrl = (req, res) => {
-	createUrl(req);
-	res.send("ok");
+	_createUrl(req).then(() => res.send("ok"));
 };
 
 export default postUrl;
